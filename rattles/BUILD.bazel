@@ -1,0 +1,18 @@
+load(
+    "@rules_python//python:defs.bzl",
+    "py_binary",
+)
+
+py_binary(
+    name = "owl",
+    srcs = [
+        "owl.py",
+    ],
+    main = "owl.py",
+    target_compatible_with = [
+        "@rules_freecad//platforms:freecad_1.0.x",
+    ],
+    deps = [
+        "//geometry:bezier",
+    ],
+)
