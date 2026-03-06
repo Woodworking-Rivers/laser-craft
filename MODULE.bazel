@@ -1,0 +1,45 @@
+""" Bazel module containing laser cutting and woodwork schemas made by FreeCAD """
+
+module(
+    name = "laser-craft",
+    version = "0.1.0",
+)
+
+bazel_dep(
+    name = "rules_freecad",
+    version = "0.2.0",
+)
+
+bazel_dep(
+    name = "rules_python",
+    version = "2.3.3",
+)
+
+git_override(
+    module_name = "rules_freecad",
+    remote = "git@github.com:Programming-Rivers/rules_freecad.git",
+    commit = "20e6b2db75ca9ba0d5198ee10748c8f10e1456c8",  # v0.2.3
+)
+
+register_execution_platforms(
+    "@rules_freecad//platforms:freecad_linux_x86_64",
+)
+
+# Disable implicit __init__.py creation
+rules_python_config = use_extension(
+    "@rules_python//python/extensions:config.bzl",
+    "config",
+)
+rules_python_config.explicit_init_py(default = True)
+
+python = use_extension(
+    "@rules_python//python/extensions:python.bzl",
+    "python",
+)
+
+python.toolchain(
+    python_version = "3.11",
+    is_default = True,
+)
+use_repo(python, "python_3_11", "python_versions", "pythons_hub")
+

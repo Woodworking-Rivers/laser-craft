@@ -1,0 +1,8 @@
+# ## How to use this file (optional one time setup)
+#
+# To avoid always passing 
+# the --platform=@rules_freecadfreecad//platforms:freecad_<PLATFORM> flag:
+# 1. Copy this file to .bazelrc.user
+# 2. Replace <PLATFORM> with your platform.
+
+common --platforms=@rules_freecad//platforms:freecad_<PLATFORM>
