@@ -1,0 +1,25 @@
+
+load(
+    "@rules_python//python:defs.bzl",
+    "py_binary",
+)
+
+py_binary(
+    name = "birth_milestones",
+    srcs = [
+        "birth_milestones.py",
+    ],
+    deps = [
+        "@rules_python//python/runfiles",
+    ],
+    main = "birth_milestones.py",
+    target_compatible_with = [
+        "@rules_freecad//platforms:freecad_1.1.x",
+    ],
+    data = [
+        "//fonts:funnel",
+        "//fonts:open_sans",
+        "//fonts:tangerine",
+    ],
+)
+
