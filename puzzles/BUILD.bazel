@@ -1,0 +1,18 @@
+load(
+    "@rules_python//python:defs.bzl",
+    "py_binary",
+)
+
+py_binary(
+    name = "abcpzl",
+    srcs = [
+        "abcpzl.py",
+    ],
+    main = "abcpzl.py",
+    target_compatible_with = [
+        "@rules_freecad//platforms:freecad_1.1.x",
+    ],
+    deps = [
+        "//geometry:bezier",
+    ],
+)
