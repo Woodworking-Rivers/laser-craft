@@ -1,0 +1,23 @@
+"""Fonts used in the project"""
+
+filegroup(
+    name = "open_sans",
+    srcs = [
+        "@open_sans_font//file:OpenSans-Regular.ttf",
+    ],
+    visibility = ["//visibility:public"]
+)
+
+filegroup (
+    name = "funnel",
+    srcs = [
+        "@funnel_font//file:FunnelSans-Regular.ttf",
+    ],
+    visibility =  ["//visibility:public"],
+)
+
+filegroup(
+    name = "tangerine",
+    srcs = ["@tangerine_font//file:Tangerine-Regular.ttf"],
+    visibility = ["//visibility:public"],
+)

@@ -43,3 +43,29 @@ python.toolchain(
 )
 use_repo(python, "python_3_11", "python_versions", "pythons_hub")
 
+http_file = use_repo_rule(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_file",
+)
+
+# FreeCAD font dependencies
+http_file(
+    name = "open_sans_font",
+    url = "https://github.com/googlefonts/opensans/raw/bd7e37632246368c60fdcbd374dbf9bad11969b6/fonts/ttf/OpenSans-Regular.ttf",
+    sha256 = "c53aceea2dcf5b4098099c0c4d0a061d17e178a049317b42a422b1a9f7f8eb59",
+    downloaded_file_path = "OpenSans-Regular.ttf"
+)
+
+http_file(
+    name = "funnel_font",
+    url = "https://github.com/Dicotype/Funnel/raw/refs/tags/Upgrade/fonts/Funnel_Sans/ttf/FunnelSans-Regular.ttf",
+    sha256 = "7d257f04c980c21e0faee72027e3e3b6bd8a7b304715b198a637949cda3b22a8",
+    downloaded_file_path = "FunnelSans-Regular.ttf"
+)
+
+http_file(
+    name = "tangerine_font",
+    url = "https://github.com/googlefonts/TangerineFont/raw/9b57a9f9be5ecfe95e7f8c0e6b2b827eedb9ad67/fonts/ttf/Tangerine-Regular.ttf",
+    sha256 = "42c38e05ea658d4e55d363654ecda72806ede96b1585202740b423b78305aee5",
+    downloaded_file_path = "Tangerine-Regular.ttf"
+)
