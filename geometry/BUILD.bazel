@@ -9,7 +9,7 @@ py_library(
         "bezier.py",
     ],
     target_compatible_with = [
-        "@rules_freecad//platforms:freecad_1.0.x",
+        "@rules_freecad//platforms:freecad_1.1.x",
     ],
     visibility = [
         "//visibility:public",
