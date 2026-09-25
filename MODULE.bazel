@@ -7,7 +7,7 @@ module(
 
 bazel_dep(
     name = "rules_freecad",
-    version = "0.2.0",
+    version = "0.3.0",
 )
 
 bazel_dep(
@@ -18,7 +18,7 @@ bazel_dep(
 git_override(
     module_name = "rules_freecad",
     remote = "git@github.com:Programming-Rivers/rules_freecad.git",
-    commit = "20e6b2db75ca9ba0d5198ee10748c8f10e1456c8",  # v0.2.3
+    commit = "20e6b2db75ca9ba0d5198ee10748c8f10e1456c8",  # v0.3.0
 )
 
 register_execution_platforms(
