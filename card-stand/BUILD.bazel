@@ -1,0 +1,15 @@
+load(
+    "@rules_python//python:defs.bzl",
+    "py_binary",
+)
+
+py_binary(
+    name = "card-stand",
+    srcs = [
+        "card-stand.py",
+    ],
+    main = "card-stand.py",
+    target_compatible_with = [
+        "@rules_freecad//platforms:freecad_1.1.x",
+    ],
+)
