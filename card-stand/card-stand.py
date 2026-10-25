@@ -48,7 +48,7 @@ EPILOG_LEGENT_36EXT = inch(36), inch(24)
 EPILOG_MINI_24 = inch(24), inch(12)
 
 # Set the bed size
-bed_size_x, bed_size_y = EPILOG_LEGENT_36EXT
+bed_size_x, bed_size_y = cm(25.5), cm(25.5)
 
 def stand(doc, width: float, height: float, cutout_width: float, cutout_height:float, center_position: App.Vector) ->  list[Draft.DraftObject]:
     """
@@ -92,11 +92,11 @@ def main():
         cutout_height=mm(5),
         center_position=App.Vector(mm(-10) + i * 22, mm(-10) + j * 22),
     )
-    for i in range (1, 5)
-    for j in range (1, 6)
+    for i in range (1, 12)
+    for j in range (1, 12)
     ]
 
-    doc.recompute() 
+    doc.recompute()
     
     # Export both the bounding box and the owl curve
     # Order matters for SVG layering (first is bottom)
